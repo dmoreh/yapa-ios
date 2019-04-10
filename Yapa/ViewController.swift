@@ -10,34 +10,46 @@ import UIKit
 import AVKit
 
 class ViewController: UIViewController {
-    var audioPlayer: AVAudioPlayer?
+    var player: AVPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        self.playLocalFile()
+        self.playLocalFile(fileName: "freaks")
 
     }
 
-    func playUsingAVAudioPlayer(url: URL) {
+
+    @IBAction func playButtonPressed() {
+        guard let status = self.player?.timeControlStatus else { return }
+        switch status {
+        case .paused:
+            self.player?.play()
+        case .playing:
+            self.player?.pause()
+        default:
+            print("Unknown status reached in playButtonPressed")
+        }
+    }
+
+    func play(url: URL) {
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.play()
+            try AVAudioSession.sharedInstance().setCategory(.playback)
+            self.player = AVPlayer(url: url)
+            self.player?.play()
         } catch {
             print(error)
         }
     }
 
-    func playLocalFile() {
-        guard let filePath = Bundle.main.path(forResource: "freaks", ofType: "mp3") else {
+    func playLocalFile(fileName: String) {
+        guard let filePath = Bundle.main.path(forResource: fileName, ofType: "mp3") else {
             print("File does not exist in the bundle.")
             return
         }
 
         let url = URL(fileURLWithPath: filePath)
 
-        playUsingAVAudioPlayer(url: url)
+        self.play(url: url)
     }
-
 }
-
