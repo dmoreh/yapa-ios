@@ -12,6 +12,7 @@
 		9B10BFD5225E4EE600A0CCDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B10BFD3225E4EE600A0CCDB /* Main.storyboard */; };
 		9B10BFD7225E4EE800A0CCDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B10BFD6225E4EE800A0CCDB /* Assets.xcassets */; };
 		9B10BFDA225E4EE800A0CCDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B10BFD8225E4EE800A0CCDB /* LaunchScreen.storyboard */; };
+		9B10BFE2225E4FA700A0CCDB /* freaks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B10BFE1225E4FA700A0CCDB /* freaks.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		9B10BFD6225E4EE800A0CCDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B10BFD9225E4EE800A0CCDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B10BFDB225E4EE800A0CCDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B10BFE1225E4FA700A0CCDB /* freaks.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = freaks.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,17 @@
 				9B10BFD6225E4EE800A0CCDB /* Assets.xcassets */,
 				9B10BFD8225E4EE800A0CCDB /* LaunchScreen.storyboard */,
 				9B10BFDB225E4EE800A0CCDB /* Info.plist */,
+				9B10BFE3225E512B00A0CCDB /* Resources */,
 			);
 			path = Yapa;
+			sourceTree = "<group>";
+		};
+		9B10BFE3225E512B00A0CCDB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9B10BFE1225E4FA700A0CCDB /* freaks.mp3 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B10BFDA225E4EE800A0CCDB /* LaunchScreen.storyboard in Resources */,
+				9B10BFE2225E4FA700A0CCDB /* freaks.mp3 in Resources */,
 				9B10BFD7225E4EE800A0CCDB /* Assets.xcassets in Resources */,
 				9B10BFD5225E4EE600A0CCDB /* Main.storyboard in Resources */,
 			);
