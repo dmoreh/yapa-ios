@@ -13,9 +13,12 @@
 		9B10BFD7225E4EE800A0CCDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B10BFD6225E4EE800A0CCDB /* Assets.xcassets */; };
 		9B10BFDA225E4EE800A0CCDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B10BFD8225E4EE800A0CCDB /* LaunchScreen.storyboard */; };
 		9B10BFE2225E4FA700A0CCDB /* freaks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B10BFE1225E4FA700A0CCDB /* freaks.mp3 */; };
+		FA1F9A708DBF888A9566C33C /* Pods_Yapa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F433A57ADB53B4538844932F /* Pods_Yapa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4DCF3EBA297AFAE12C83C371 /* Pods-Yapa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yapa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yapa/Pods-Yapa.release.xcconfig"; sourceTree = "<group>"; };
+		613D4E7C58EF8057214B6F8F /* Pods-Yapa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yapa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yapa/Pods-Yapa.debug.xcconfig"; sourceTree = "<group>"; };
 		9B10BFCC225E4EE600A0CCDB /* Yapa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yapa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B10BFCF225E4EE600A0CCDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B10BFD1225E4EE600A0CCDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		9B10BFD9225E4EE800A0CCDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B10BFDB225E4EE800A0CCDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B10BFE1225E4FA700A0CCDB /* freaks.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = freaks.mp3; sourceTree = "<group>"; };
+		F433A57ADB53B4538844932F /* Pods_Yapa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yapa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1F9A708DBF888A9566C33C /* Pods_Yapa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12F847BADAF8E9A05227C968 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F433A57ADB53B4538844932F /* Pods_Yapa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9B10BFC3225E4EE600A0CCDB = {
 			isa = PBXGroup;
 			children = (
 				9B10BFCE225E4EE600A0CCDB /* Yapa */,
 				9B10BFCD225E4EE600A0CCDB /* Products */,
+				E113E7BBBAEB788D634CDEF6 /* Pods */,
+				12F847BADAF8E9A05227C968 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +90,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		E113E7BBBAEB788D634CDEF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				613D4E7C58EF8057214B6F8F /* Pods-Yapa.debug.xcconfig */,
+				4DCF3EBA297AFAE12C83C371 /* Pods-Yapa.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +106,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B10BFDE225E4EE800A0CCDB /* Build configuration list for PBXNativeTarget "Yapa" */;
 			buildPhases = (
+				67D1E9C181FD9EDAD4A8F93B /* [CP] Check Pods Manifest.lock */,
 				9B10BFC8225E4EE600A0CCDB /* Sources */,
 				9B10BFC9225E4EE600A0CCDB /* Frameworks */,
 				9B10BFCA225E4EE600A0CCDB /* Resources */,
+				2EE04CB05EC4E5A3187983E9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +167,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2EE04CB05EC4E5A3187983E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Yapa/Pods-Yapa-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yapa/Pods-Yapa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67D1E9C181FD9EDAD4A8F93B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yapa-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9B10BFC8225E4EE600A0CCDB /* Sources */ = {
@@ -292,6 +357,7 @@
 		};
 		9B10BFDF225E4EE800A0CCDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 613D4E7C58EF8057214B6F8F /* Pods-Yapa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -310,6 +376,7 @@
 		};
 		9B10BFE0225E4EE800A0CCDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DCF3EBA297AFAE12C83C371 /* Pods-Yapa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
