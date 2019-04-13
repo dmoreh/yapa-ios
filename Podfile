@@ -5,6 +5,7 @@ target 'Yapa' do
   use_frameworks!
 
   # Pods for Yapa
-  pod 'Alamofire', '~> 4.7'
+  pod 'Alamofire', '~> 4.8'
+  pod 'AlamofireImage', '~> 3.5'
 
 end
