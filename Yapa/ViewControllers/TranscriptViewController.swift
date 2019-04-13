@@ -97,4 +97,16 @@ extension TranscriptViewController: UISearchBarDelegate {
             self.filteredSentences = self.transcription.sentences.filter { sentenceIds.contains($0.id) }
             self.tableView.reloadData()
         }
-    }}
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.text = ""
+        self.searchBar(self.searchBar, textDidChange: "")
+        self.searchBar.resignFirstResponder()
+        self.tableView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
+            guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
+            self.tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+        }
+    }
+}
