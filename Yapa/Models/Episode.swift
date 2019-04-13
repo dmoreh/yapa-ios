@@ -16,6 +16,7 @@ struct Episode: Codable {
     let showNotes: String
     let audioURL: URL
     let transcription: Transcription?
+    let topKeywordString: String?
 
     var audioFileURL: URL {
         let filename = "podcast-\(self.podcastId)-episode-\(self.id)"
@@ -31,5 +32,6 @@ struct Episode: Codable {
         case showNotes = "show_notes"
         case audioURL = "audio_url"
         case transcription = "transcription"
+        case topKeywordString = "top_keyword_string"
     }
 }

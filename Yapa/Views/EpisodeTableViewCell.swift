@@ -11,11 +11,13 @@ import UIKit
 class EpisodeTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
 
     var episode: Episode! {
         didSet {
             self.titleLabel.text = self.episode.title
             self.subtitleLabel.text = self.episode.publicationDate
+            self.descriptionLabel.text = self.episode.topKeywordString
         }
     }
 
