@@ -24,6 +24,13 @@ class PodcastViewController: UIViewController {
             self.podcasts = podcasts
         }
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let podcastDetailViewController = segue.destination as? PodcastDetailViewController,
+            let indexPath = tableView.indexPathForSelectedRow
+            else { return }
+        podcastDetailViewController.podcast = self.podcasts[indexPath.row]
+    }
 }
 
 extension PodcastViewController: UITableViewDataSource {
@@ -44,5 +51,9 @@ extension PodcastViewController: UITableViewDataSource {
 }
 
 extension PodcastViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let podcast = self.podcasts[indexPath.row]
+        let podcastDetailViewController = PodcastDetailViewController.initFromStoryboard(podcast: podcast)
+        self.navigationController?.pushViewController(podcastDetailViewController, animated: true)
+    }
 }
