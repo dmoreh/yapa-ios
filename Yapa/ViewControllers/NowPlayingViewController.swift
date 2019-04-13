@@ -115,12 +115,16 @@ class NowPlayingViewController: UIViewController {
 
     @IBAction func backButtonPressed() {
         guard let currentSentence = self.currentSentence else { return }
-        self.seekToSentence(id: currentSentence.id - 1)
+        var lastSentenceId = currentSentence.id - 5
+        if lastSentenceId < 0 {
+            lastSentenceId = 0
+        }
+        self.seekToSentence(id: lastSentenceId)
     }
 
     @IBAction func forwardButtonPressed() {
         guard let currentSentence = self.currentSentence else { return }
-        self.seekToSentence(id: currentSentence.id + 1)
+        self.seekToSentence(id: currentSentence.id + 5)
     }
 
     @IBAction func transcriptButtonPressed() {
