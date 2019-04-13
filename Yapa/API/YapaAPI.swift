@@ -20,7 +20,17 @@ struct YapaAPI {
                           headers: nil)
             .validate()
             .responseJSON { response in
-                print("wassup")
+                guard let data = response.data else { return }
+                do {
+                    let podcastResponse = try JSONDecoder().decode(PodcastResponse.self, from: data)
+                    completion?(podcastResponse.podcasts)
+                } catch {
+                    print(error)
+                }
         }
     }
+}
+
+struct PodcastResponse: Codable {
+    let podcasts: [Podcast]
 }

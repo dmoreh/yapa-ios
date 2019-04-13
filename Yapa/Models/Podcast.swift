@@ -12,6 +12,14 @@ struct Podcast: Codable {
     let name: String
     let description: String
     let author: String
-    let imageUrl: URL
+    let imageURL: URL
     let episodes: [Episode]
+
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case description = "description"
+        case author = "author"
+        case imageURL = "image_url"
+        case episodes = "episodes"
+    }
 }

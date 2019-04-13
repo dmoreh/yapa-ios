@@ -9,9 +9,17 @@
 import Foundation
 
 struct Episode: Codable {
-    let title: String
+    let title: String?
     let publicationDate: String
     let showNotes: String
-    let audioUrl: URL
-    let transcript: [Transcript]
+    let audioURL: URL
+    let transcript: Transcript?
+
+    enum CodingKeys: String, CodingKey {
+        case title = "title"
+        case publicationDate = "publication_date"
+        case showNotes = "show_notes"
+        case audioURL = "audio_url"
+        case transcript = "transcript"
+    }
 }

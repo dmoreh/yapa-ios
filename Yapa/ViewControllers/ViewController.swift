@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         }
     }
 
-
     @IBAction func playButtonPressed() {
         guard let status = self.player?.timeControlStatus else { return }
         switch status {
