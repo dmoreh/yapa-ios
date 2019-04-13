@@ -11,6 +11,7 @@ import Alamofire
 
 struct YapaAPI {
     static let baseURL = "https://yapa-app.herokuapp.com/"
+    static var requestId = 0
 
     static func getPodcasts(_ completion: (([Podcast]) -> Void)?) {
         Alamofire.request(self.baseURL + "podcasts",
@@ -31,9 +32,10 @@ struct YapaAPI {
     }
 
     static func searchPodcast(podcastId: Int, query: String, _ completion: (([SearchResult]) -> Void)?) {
+        self.requestId += 1
         Alamofire.request(self.baseURL + "search",
                           method: .get,
-                          parameters: ["podcast_id": podcastId, "query": query],
+                          parameters: ["podcast_id": podcastId, "query": query, "request_id": self.requestId],
                           encoding: URLEncoding.default,
                           headers: nil)
             .validate()
@@ -41,6 +43,7 @@ struct YapaAPI {
                 guard let data = response.data else { return }
                 do {
                     let searchResponse = try JSONDecoder().decode(SearchResponse.self, from: data)
+                    guard searchResponse.requestId == self.requestId else { return }
                     completion?(searchResponse.results)
                 } catch {
                     print(error)
@@ -49,9 +52,10 @@ struct YapaAPI {
     }
 
     static func searchEpisode(episodeId: Int, query: String, _ completion: (([SearchResult]) -> Void)?) {
+        self.requestId += 1
         Alamofire.request(self.baseURL + "search",
                           method: .get,
-                          parameters: ["episode_id": episodeId, "query": query],
+                          parameters: ["episode_id": episodeId, "query": query, "request_id": self.requestId],
                           encoding: URLEncoding.default,
                           headers: nil)
             .validate()
@@ -59,6 +63,7 @@ struct YapaAPI {
                 guard let data = response.data else { return }
                 do {
                     let searchResponse = try JSONDecoder().decode(SearchResponse.self, from: data)
+                    guard searchResponse.requestId == self.requestId else { return }
                     completion?(searchResponse.results)
                 } catch {
                     print(error)
@@ -73,6 +78,12 @@ struct PodcastResponse: Codable {
 
 struct SearchResponse: Codable {
     let results: [SearchResult]
+    let requestId: Int
+
+    enum CodingKeys: String, CodingKey {
+        case results = "results"
+        case requestId = "request_id"
+    }
 }
 
 struct SearchResult: Codable {
