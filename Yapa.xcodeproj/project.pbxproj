@@ -24,6 +24,7 @@
 		9B2523CE22619AD900AB2B09 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2523CD22619AD900AB2B09 /* NowPlayingViewController.swift */; };
 		9B2523D82262509D00AB2B09 /* TranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2523D72262509D00AB2B09 /* TranscriptViewController.swift */; };
 		9B2523DA226251BC00AB2B09 /* SentenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2523D9226251BC00AB2B09 /* SentenceTableViewCell.swift */; };
+		9B2524422262665800AB2B09 /* UIColor+Yapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2524412262665800AB2B09 /* UIColor+Yapa.swift */; };
 		FA1F9A708DBF888A9566C33C /* Pods_Yapa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F433A57ADB53B4538844932F /* Pods_Yapa.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		9B2523CD22619AD900AB2B09 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		9B2523D72262509D00AB2B09 /* TranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewController.swift; sourceTree = "<group>"; };
 		9B2523D9226251BC00AB2B09 /* SentenceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceTableViewCell.swift; sourceTree = "<group>"; };
+		9B2524412262665800AB2B09 /* UIColor+Yapa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Yapa.swift"; sourceTree = "<group>"; };
 		F433A57ADB53B4538844932F /* Pods_Yapa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yapa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 				9B1EACD3226170030091691B /* ViewControllers */,
 				9B1EACDF22617E970091691B /* Views */,
 				9B1EACD222616FFC0091691B /* Models */,
+				9B2524432262666E00AB2B09 /* Utils */,
 				9B10BFD3225E4EE600A0CCDB /* Main.storyboard */,
 				9B10BFD6225E4EE800A0CCDB /* Assets.xcassets */,
 				9B10BFD8225E4EE800A0CCDB /* LaunchScreen.storyboard */,
@@ -153,6 +156,14 @@
 				9B2523D9226251BC00AB2B09 /* SentenceTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9B2524432262666E00AB2B09 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9B2524412262665800AB2B09 /* UIColor+Yapa.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		E113E7BBBAEB788D634CDEF6 /* Pods */ = {
@@ -283,6 +294,7 @@
 				9B2523CA22618C6100AB2B09 /* PodcastDetailViewController.swift in Sources */,
 				9B1EACD7226170860091691B /* Transcription.swift in Sources */,
 				9B2523CC22618DD100AB2B09 /* EpisodeTableViewCell.swift in Sources */,
+				9B2524422262665800AB2B09 /* UIColor+Yapa.swift in Sources */,
 				9B1EACD5226170550091691B /* Episode.swift in Sources */,
 				9B10BFD0225E4EE600A0CCDB /* AppDelegate.swift in Sources */,
 				9B1EACD022616FF10091691B /* Podcast.swift in Sources */,
