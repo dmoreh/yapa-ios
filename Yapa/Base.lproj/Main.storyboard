@@ -347,6 +347,7 @@
                         <outlet property="playPauseButton" destination="fMt-0O-mcl" id="1uW-2I-7Y0"/>
                         <outlet property="slider" destination="73g-0C-sak" id="ffy-mJ-VKT"/>
                         <outlet property="timeRemainingLabel" destination="uMi-as-bEd" id="WaI-Xj-c0J"/>
+                        <outlet property="transcriptButton" destination="NYB-Eu-s6H" id="AQG-Fk-YM2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtE-gy-b5M" userLabel="First Responder" sceneMemberID="firstResponder"/>

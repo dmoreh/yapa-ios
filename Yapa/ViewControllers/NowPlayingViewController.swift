@@ -17,6 +17,7 @@ class NowPlayingViewController: UIViewController {
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
+    @IBOutlet weak var transcriptButton: UIButton!
 
     var podcast: Podcast!
     var episode: Episode!
@@ -41,6 +42,8 @@ class NowPlayingViewController: UIViewController {
                 self.updateTime()
             }
         }
+
+        self.transcriptButton.isHidden = self.episode.transcription?.sentences == nil
     }
 
     private func setupAudioPlayer() {
