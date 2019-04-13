@@ -43,9 +43,9 @@ extension TranscriptViewController: UITableViewDataSource {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 88
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 88
+//    }
 }
 
 extension TranscriptViewController: UITableViewDelegate {
