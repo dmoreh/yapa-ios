@@ -78,6 +78,8 @@ class NowPlayingViewController: UIViewController {
     }
 
     @IBAction func sliderValueChanged() {
+        guard let audioPlayer = self.audioPlayer else { return }
+        audioPlayer.currentTime = audioPlayer.duration * Double(self.slider.value)
     }
 
     @IBAction func playPauseButtonPressed() {
