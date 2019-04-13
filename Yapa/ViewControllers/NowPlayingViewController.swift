@@ -70,6 +70,7 @@ class NowPlayingViewController: UIViewController {
     private func setupAudioPlayer() {
         do {
             self.audioPlayer = try AVAudioPlayer(contentsOf: self.episode.audioFileURL)
+            try AVAudioSession.sharedInstance().setCategory(.playback, options: .defaultToSpeaker)
             self.audioPlayer?.prepareToPlay()
         } catch {
             print(error)
