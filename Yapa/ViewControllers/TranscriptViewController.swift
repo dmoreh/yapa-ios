@@ -65,6 +65,7 @@ extension TranscriptViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SentenceTableViewCell.self), for: indexPath)
+        (cell as? SentenceTableViewCell)?.searchTerm = self.searchBar.text
         (cell as? SentenceTableViewCell)?.sentence = self.filteredSentences[indexPath.row]
         return cell
     }

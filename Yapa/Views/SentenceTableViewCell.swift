@@ -12,10 +12,19 @@ class SentenceTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
 
+    var searchTerm: String?
+
     var sentence: Sentence! {
         didSet {
             self.timeLabel.text = self.formattedString(timeInterval: sentence.startSeconds)
             self.contentLabel.text = sentence.text
+
+            if let searchTerm = self.searchTerm, let range = sentence.text.lowercased().range(of: searchTerm.lowercased()) {
+                let attributedText = NSMutableAttributedString(string: sentence.text)
+                let nsRange = NSMakeRange(range.lowerBound.encodedOffset, range.upperBound.encodedOffset - range.lowerBound.encodedOffset)
+                attributedText.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: self.contentLabel.font.pointSize), range: nsRange)
+                self.contentLabel.attributedText = attributedText
+            }
         }
     }
 
