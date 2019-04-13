@@ -21,6 +21,7 @@
 		9B1EACDE22617E920091691B /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACDD22617E920091691B /* PodcastTableViewCell.swift */; };
 		9B2523CA22618C6100AB2B09 /* PodcastDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2523C922618C6100AB2B09 /* PodcastDetailViewController.swift */; };
 		9B2523CC22618DD100AB2B09 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2523CB22618DD100AB2B09 /* EpisodeTableViewCell.swift */; };
+		9B2523CE22619AD900AB2B09 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2523CD22619AD900AB2B09 /* NowPlayingViewController.swift */; };
 		FA1F9A708DBF888A9566C33C /* Pods_Yapa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F433A57ADB53B4538844932F /* Pods_Yapa.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		9B1EACDD22617E920091691B /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
 		9B2523C922618C6100AB2B09 /* PodcastDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailViewController.swift; sourceTree = "<group>"; };
 		9B2523CB22618DD100AB2B09 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		9B2523CD22619AD900AB2B09 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		F433A57ADB53B4538844932F /* Pods_Yapa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yapa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 				9B10BFD1225E4EE600A0CCDB /* ViewController.swift */,
 				9B1EACDB22617D840091691B /* PodcastViewController.swift */,
 				9B2523C922618C6100AB2B09 /* PodcastDetailViewController.swift */,
+				9B2523CD22619AD900AB2B09 /* NowPlayingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				9B10BFD0225E4EE600A0CCDB /* AppDelegate.swift in Sources */,
 				9B1EACD022616FF10091691B /* Podcast.swift in Sources */,
 				9B1EACDC22617D840091691B /* PodcastViewController.swift in Sources */,
+				9B2523CE22619AD900AB2B09 /* NowPlayingViewController.swift in Sources */,
 				9B1EACDE22617E920091691B /* PodcastTableViewCell.swift in Sources */,
 				9B1EACD9226170A50091691B /* YapaAPI.swift in Sources */,
 			);
