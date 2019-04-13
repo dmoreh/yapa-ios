@@ -13,6 +13,10 @@
 		9B10BFD7225E4EE800A0CCDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B10BFD6225E4EE800A0CCDB /* Assets.xcassets */; };
 		9B10BFDA225E4EE800A0CCDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B10BFD8225E4EE800A0CCDB /* LaunchScreen.storyboard */; };
 		9B10BFE2225E4FA700A0CCDB /* freaks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B10BFE1225E4FA700A0CCDB /* freaks.mp3 */; };
+		9B1EACD022616FF10091691B /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACCF22616FF10091691B /* Podcast.swift */; };
+		9B1EACD5226170550091691B /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACD4226170550091691B /* Episode.swift */; };
+		9B1EACD7226170860091691B /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACD6226170860091691B /* Transcript.swift */; };
+		9B1EACD9226170A50091691B /* YapaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACD8226170A50091691B /* YapaAPI.swift */; };
 		FA1F9A708DBF888A9566C33C /* Pods_Yapa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F433A57ADB53B4538844932F /* Pods_Yapa.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,10 @@
 		9B10BFD9225E4EE800A0CCDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B10BFDB225E4EE800A0CCDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B10BFE1225E4FA700A0CCDB /* freaks.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = freaks.mp3; sourceTree = "<group>"; };
+		9B1EACCF22616FF10091691B /* Podcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
+		9B1EACD4226170550091691B /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		9B1EACD6226170860091691B /* Transcript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
+		9B1EACD8226170A50091691B /* YapaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YapaAPI.swift; sourceTree = "<group>"; };
 		F433A57ADB53B4538844932F /* Pods_Yapa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yapa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,7 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				9B10BFCF225E4EE600A0CCDB /* AppDelegate.swift */,
-				9B10BFD1225E4EE600A0CCDB /* ViewController.swift */,
+				9B1EACDA226170AD0091691B /* API */,
+				9B1EACD3226170030091691B /* ViewControllers */,
+				9B1EACD222616FFC0091691B /* Models */,
 				9B10BFD3225E4EE600A0CCDB /* Main.storyboard */,
 				9B10BFD6225E4EE800A0CCDB /* Assets.xcassets */,
 				9B10BFD8225E4EE800A0CCDB /* LaunchScreen.storyboard */,
@@ -88,6 +98,32 @@
 				9B10BFE1225E4FA700A0CCDB /* freaks.mp3 */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9B1EACD222616FFC0091691B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9B1EACCF22616FF10091691B /* Podcast.swift */,
+				9B1EACD4226170550091691B /* Episode.swift */,
+				9B1EACD6226170860091691B /* Transcript.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9B1EACD3226170030091691B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9B10BFD1225E4EE600A0CCDB /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9B1EACDA226170AD0091691B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9B1EACD8226170A50091691B /* YapaAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		E113E7BBBAEB788D634CDEF6 /* Pods */ = {
@@ -213,7 +249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B10BFD2225E4EE600A0CCDB /* ViewController.swift in Sources */,
+				9B1EACD7226170860091691B /* Transcript.swift in Sources */,
+				9B1EACD5226170550091691B /* Episode.swift in Sources */,
 				9B10BFD0225E4EE600A0CCDB /* AppDelegate.swift in Sources */,
+				9B1EACD022616FF10091691B /* Podcast.swift in Sources */,
+				9B1EACD9226170A50091691B /* YapaAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

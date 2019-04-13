@@ -15,8 +15,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.playLocalFile(fileName: "freaks")
-
+//        self.playLocalFile(fileName: "freaks")
+        YapaAPI.getPodcasts { podcasts in
+            print("success?")
+            print("podcasts = \(podcasts)")
+        }
     }
 
 
