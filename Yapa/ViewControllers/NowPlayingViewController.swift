@@ -106,5 +106,19 @@ class NowPlayingViewController: UIViewController {
     }
 
     @IBAction func transcriptButtonPressed() {
+        let transcriptViewController = TranscriptViewController.initFromStoryboard(transcription: self.episode.transcription)
+        transcriptViewController.delegate = self
+        self.navigationController?.pushViewController(transcriptViewController, animated: true)
+    }
+
+    private func seekToSentence(_ sentence: Sentence) {
+        self.audioPlayer?.currentTime = sentence.startSeconds
+        self.audioPlayer?.play()
+    }
+}
+
+extension NowPlayingViewController: TranscriptionDelegate {
+    func didSelectSentence(sentence: Sentence) {
+        self.seekToSentence(sentence)
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 struct Transcription: Codable {
     let id: Int
-    let sentences: [Sentence]?
+    let sentences: [Sentence]!
 }
 
 struct Sentence: Codable {
@@ -18,4 +18,12 @@ struct Sentence: Codable {
     let start: Int
     let end: Int
     let text: String
+
+    var startSeconds: TimeInterval {
+        return Double(self.start) / 1000
+    }
+
+    var endSeconds: TimeInterval {
+        return Double(self.end) / 1000
+    }
 }
