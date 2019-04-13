@@ -9,6 +9,10 @@
 import UIKit
 import AVKit
 
+protocol NowPlayingDelegate: class {
+    func didChangeCurrentSentence(_ sentence: Sentence?)
+}
+
 class NowPlayingViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var slider: UISlider!
@@ -23,6 +27,8 @@ class NowPlayingViewController: UIViewController {
     var episode: Episode!
     var audioPlayer: AVAudioPlayer?
     var timer: Timer?
+
+    weak var delegate: NowPlayingDelegate?
 
     var currentSentence: Sentence? {
         guard let sentences = self.episode.transcription?.sentences,
@@ -77,6 +83,8 @@ class NowPlayingViewController: UIViewController {
 
         let progressPercent = audioPlayer.currentTime / audioPlayer.duration
         self.slider.value = Float(progressPercent)
+
+        self.delegate?.didChangeCurrentSentence(self.currentSentence)
     }
 
     private func formattedString(timeInterval: TimeInterval) -> String {
@@ -99,18 +107,26 @@ class NowPlayingViewController: UIViewController {
     @IBAction func playPauseButtonPressed() {
         guard let audioPlayer = self.audioPlayer else { return }
         if audioPlayer.isPlaying {
-            audioPlayer.pause()
-            self.playPauseButton.setImage(UIImage(named: "play"), for: .normal)
-            self.timer?.invalidate()
+            self.pause()
         } else {
-            audioPlayer.play()
-            self.playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
-            self.timer = Timer.scheduledTimer(timeInterval: 0.3,
-                                              target: self,
-                                              selector: #selector(updateTime),
-                                              userInfo: nil,
-                                              repeats: true)
+            self.play()
         }
+    }
+
+    private func pause() {
+        self.audioPlayer?.pause()
+        self.playPauseButton.setImage(UIImage(named: "play"), for: .normal)
+        self.timer?.invalidate()
+    }
+
+    private func play() {
+        self.audioPlayer?.play()
+        self.playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
+        self.timer = Timer.scheduledTimer(timeInterval: 0.3,
+                                          target: self,
+                                          selector: #selector(updateTime),
+                                          userInfo: nil,
+                                          repeats: true)
     }
 
     @IBAction func backButtonPressed() {
@@ -130,13 +146,16 @@ class NowPlayingViewController: UIViewController {
     @IBAction func transcriptButtonPressed() {
         let transcriptViewController = TranscriptViewController.initFromStoryboard(transcription: self.episode.transcription)
         transcriptViewController.delegate = self
+        self.delegate = transcriptViewController
         self.navigationController?.pushViewController(transcriptViewController, animated: true)
     }
 
-    private func seekToSentence(_ sentence: Sentence) {
+    private func seekToSentence(_ sentence: Sentence, autoplay: Bool = false) {
         self.audioPlayer?.currentTime = sentence.startSeconds
-        self.audioPlayer?.play()
         self.updateTime()
+        if autoplay {
+            self.play()
+        }
     }
 
     private func seekToSentence(id: Int) {
@@ -147,6 +166,6 @@ class NowPlayingViewController: UIViewController {
 
 extension NowPlayingViewController: TranscriptionDelegate {
     func didSelectSentence(sentence: Sentence) {
-        self.seekToSentence(sentence)
+        self.seekToSentence(sentence, autoplay: true)
     }
 }

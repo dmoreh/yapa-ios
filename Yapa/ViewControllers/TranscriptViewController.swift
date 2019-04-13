@@ -26,9 +26,13 @@ class TranscriptViewController: UIViewController {
         return viewController
     }
 
+    private func highlightSentence(_ sentence: Sentence) {
+        let indexPath = IndexPath(row: sentence.id, section: 0)
+        self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 }
 
@@ -42,14 +46,17 @@ extension TranscriptViewController: UITableViewDataSource {
         (cell as? SentenceTableViewCell)?.sentence = self.transcription.sentences?[indexPath.row]
         return cell
     }
-
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 88
-//    }
 }
 
 extension TranscriptViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.delegate?.didSelectSentence(sentence: self.transcription.sentences[indexPath.row])
+    }
+}
+
+extension TranscriptViewController: NowPlayingDelegate {
+    func didChangeCurrentSentence(_ sentence: Sentence?) {
+        guard let sentence = sentence else { return }
+        self.highlightSentence(sentence)
     }
 }

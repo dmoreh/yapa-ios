@@ -32,5 +32,6 @@ class SentenceTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
+        self.backgroundColor = selected ? .lightOrange : .white
     }
 }
