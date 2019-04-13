@@ -58,7 +58,7 @@ extension PodcastDetailViewController: UITableViewDataSource {
 
 extension PodcastDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let episode = self.podcast.episodes[indexPath.row]
+        let episode = self.filteredEpisodes[indexPath.row]
         let nowPlayingViewController = NowPlayingViewController.initFromStoryboard(podcast: self.podcast, episode: episode)
         self.navigationController?.pushViewController(nowPlayingViewController, animated: true)
     }
