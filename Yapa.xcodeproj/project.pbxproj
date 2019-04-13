@@ -15,7 +15,7 @@
 		9B10BFE2225E4FA700A0CCDB /* freaks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B10BFE1225E4FA700A0CCDB /* freaks.mp3 */; };
 		9B1EACD022616FF10091691B /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACCF22616FF10091691B /* Podcast.swift */; };
 		9B1EACD5226170550091691B /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACD4226170550091691B /* Episode.swift */; };
-		9B1EACD7226170860091691B /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACD6226170860091691B /* Transcript.swift */; };
+		9B1EACD7226170860091691B /* Transcription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACD6226170860091691B /* Transcription.swift */; };
 		9B1EACD9226170A50091691B /* YapaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACD8226170A50091691B /* YapaAPI.swift */; };
 		9B1EACDC22617D840091691B /* PodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACDB22617D840091691B /* PodcastViewController.swift */; };
 		9B1EACDE22617E920091691B /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACDD22617E920091691B /* PodcastTableViewCell.swift */; };
@@ -38,7 +38,7 @@
 		9B10BFE1225E4FA700A0CCDB /* freaks.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = freaks.mp3; sourceTree = "<group>"; };
 		9B1EACCF22616FF10091691B /* Podcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		9B1EACD4226170550091691B /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
-		9B1EACD6226170860091691B /* Transcript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
+		9B1EACD6226170860091691B /* Transcription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcription.swift; sourceTree = "<group>"; };
 		9B1EACD8226170A50091691B /* YapaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YapaAPI.swift; sourceTree = "<group>"; };
 		9B1EACDB22617D840091691B /* PodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewController.swift; sourceTree = "<group>"; };
 		9B1EACDD22617E920091691B /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 			children = (
 				9B1EACCF22616FF10091691B /* Podcast.swift */,
 				9B1EACD4226170550091691B /* Episode.swift */,
-				9B1EACD6226170860091691B /* Transcript.swift */,
+				9B1EACD6226170860091691B /* Transcription.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,7 +275,7 @@
 			files = (
 				9B10BFD2225E4EE600A0CCDB /* ViewController.swift in Sources */,
 				9B2523CA22618C6100AB2B09 /* PodcastDetailViewController.swift in Sources */,
-				9B1EACD7226170860091691B /* Transcript.swift in Sources */,
+				9B1EACD7226170860091691B /* Transcription.swift in Sources */,
 				9B2523CC22618DD100AB2B09 /* EpisodeTableViewCell.swift in Sources */,
 				9B1EACD5226170550091691B /* Episode.swift in Sources */,
 				9B10BFD0225E4EE600A0CCDB /* AppDelegate.swift in Sources */,

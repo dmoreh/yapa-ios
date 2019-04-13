@@ -14,7 +14,7 @@ struct Episode: Codable {
     let publicationDate: String
     let showNotes: String
     let audioURL: URL
-    let transcript: Transcript?
+    let transcription: Transcription?
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -22,6 +22,6 @@ struct Episode: Codable {
         case publicationDate = "publication_date"
         case showNotes = "show_notes"
         case audioURL = "audio_url"
-        case transcript = "transcription"
+        case transcription = "transcription"
     }
 }
