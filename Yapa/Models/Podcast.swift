@@ -9,6 +9,7 @@
 import Foundation
 
 struct Podcast: Codable {
+    let id: Int
     let name: String
     let description: String
     let author: String
@@ -16,6 +17,7 @@ struct Podcast: Codable {
     let episodes: [Episode]
 
     enum CodingKeys: String, CodingKey {
+        case id = "id"
         case name = "name"
         case description = "description"
         case author = "author"

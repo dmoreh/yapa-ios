@@ -9,6 +9,7 @@
 import Foundation
 
 struct Episode: Codable {
+    let id: Int
     let title: String?
     let publicationDate: String
     let showNotes: String
@@ -16,10 +17,11 @@ struct Episode: Codable {
     let transcript: Transcript?
 
     enum CodingKeys: String, CodingKey {
+        case id = "id"
         case title = "title"
         case publicationDate = "publication_date"
         case showNotes = "show_notes"
         case audioURL = "audio_url"
-        case transcript = "transcript"
+        case transcript = "transcription"
     }
 }
