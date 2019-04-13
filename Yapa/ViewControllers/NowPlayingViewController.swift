@@ -47,11 +47,8 @@ class NowPlayingViewController: UIViewController {
     }
 
     private func setupAudioPlayer() {
-        let path = Bundle.main.path(forResource: "freaks", ofType: "mp3")!
-        let url = URL(fileURLWithPath: path)
-
         do {
-            self.audioPlayer = try AVAudioPlayer(contentsOf: url)
+            self.audioPlayer = try AVAudioPlayer(contentsOf: self.episode.audioFileURL)
             self.audioPlayer?.prepareToPlay()
         } catch {
             print(error)
