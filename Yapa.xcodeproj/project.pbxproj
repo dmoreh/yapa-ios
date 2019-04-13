@@ -17,6 +17,8 @@
 		9B1EACD5226170550091691B /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACD4226170550091691B /* Episode.swift */; };
 		9B1EACD7226170860091691B /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACD6226170860091691B /* Transcript.swift */; };
 		9B1EACD9226170A50091691B /* YapaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACD8226170A50091691B /* YapaAPI.swift */; };
+		9B1EACDC22617D840091691B /* PodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACDB22617D840091691B /* PodcastViewController.swift */; };
+		9B1EACDE22617E920091691B /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EACDD22617E920091691B /* PodcastTableViewCell.swift */; };
 		FA1F9A708DBF888A9566C33C /* Pods_Yapa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F433A57ADB53B4538844932F /* Pods_Yapa.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		9B1EACD4226170550091691B /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		9B1EACD6226170860091691B /* Transcript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
 		9B1EACD8226170A50091691B /* YapaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YapaAPI.swift; sourceTree = "<group>"; };
+		9B1EACDB22617D840091691B /* PodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewController.swift; sourceTree = "<group>"; };
+		9B1EACDD22617E920091691B /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
 		F433A57ADB53B4538844932F /* Pods_Yapa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yapa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -82,6 +86,7 @@
 				9B10BFCF225E4EE600A0CCDB /* AppDelegate.swift */,
 				9B1EACDA226170AD0091691B /* API */,
 				9B1EACD3226170030091691B /* ViewControllers */,
+				9B1EACDF22617E970091691B /* Views */,
 				9B1EACD222616FFC0091691B /* Models */,
 				9B10BFD3225E4EE600A0CCDB /* Main.storyboard */,
 				9B10BFD6225E4EE800A0CCDB /* Assets.xcassets */,
@@ -114,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				9B10BFD1225E4EE600A0CCDB /* ViewController.swift */,
+				9B1EACDB22617D840091691B /* PodcastViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -124,6 +130,14 @@
 				9B1EACD8226170A50091691B /* YapaAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		9B1EACDF22617E970091691B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B1EACDD22617E920091691B /* PodcastTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E113E7BBBAEB788D634CDEF6 /* Pods */ = {
@@ -253,6 +267,8 @@
 				9B1EACD5226170550091691B /* Episode.swift in Sources */,
 				9B10BFD0225E4EE600A0CCDB /* AppDelegate.swift in Sources */,
 				9B1EACD022616FF10091691B /* Podcast.swift in Sources */,
+				9B1EACDC22617D840091691B /* PodcastViewController.swift in Sources */,
+				9B1EACDE22617E920091691B /* PodcastTableViewCell.swift in Sources */,
 				9B1EACD9226170A50091691B /* YapaAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
