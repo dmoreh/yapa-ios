@@ -17,15 +17,17 @@ class TranscriptViewController: UIViewController {
 
     var transcription: Transcription!
     var filteredSentences: [Sentence]!
+    var firstSentence: Sentence?
 
     lazy var searchBar = UISearchBar(frame: .zero)
 
     weak var delegate: TranscriptionDelegate!
 
-    static func initFromStoryboard(transcription: Transcription?) -> TranscriptViewController {
+    static func initFromStoryboard(transcription: Transcription?, currentSentence: Sentence?) -> TranscriptViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: String(describing: TranscriptViewController.self)) as! TranscriptViewController
         viewController.transcription = transcription
+        viewController.firstSentence = currentSentence
         return viewController
     }
 
@@ -48,6 +50,11 @@ class TranscriptViewController: UIViewController {
         self.searchBar.delegate = self
         self.navigationItem.titleView = self.searchBar
         self.filteredSentences = self.transcription.sentences
+
+        if let firstSentence = self.firstSentence {
+            let firstSentenceIndexPath = IndexPath(row: firstSentence.id, section: 0)
+            self.tableView.scrollToRow(at: firstSentenceIndexPath, at: .middle, animated: false)
+        }
     }
 }
 

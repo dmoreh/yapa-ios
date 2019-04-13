@@ -144,7 +144,7 @@ class NowPlayingViewController: UIViewController {
     }
 
     @IBAction func transcriptButtonPressed() {
-        let transcriptViewController = TranscriptViewController.initFromStoryboard(transcription: self.episode.transcription)
+        let transcriptViewController = TranscriptViewController.initFromStoryboard(transcription: self.episode.transcription, currentSentence: self.currentSentence)
         transcriptViewController.delegate = self
         self.delegate = transcriptViewController
         self.navigationController?.pushViewController(transcriptViewController, animated: true)
