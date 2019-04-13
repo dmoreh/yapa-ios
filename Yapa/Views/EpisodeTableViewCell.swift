@@ -17,7 +17,7 @@ class EpisodeTableViewCell: UITableViewCell {
         didSet {
             self.titleLabel.text = self.episode.title
             self.subtitleLabel.text = self.episode.publicationDate
-            self.descriptionLabel.text = self.episode.topKeywordString
+            self.descriptionLabel.text = self.episode.strippedSubtitle
         }
     }
 
