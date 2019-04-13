@@ -72,7 +72,7 @@ extension TranscriptViewController: UITableViewDataSource {
 
 extension TranscriptViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate?.didSelectSentence(sentence: self.transcription.sentences[indexPath.row])
+        self.delegate?.didSelectSentence(sentence: self.filteredSentences[indexPath.row])
     }
 }
 
