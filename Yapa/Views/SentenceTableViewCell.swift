@@ -23,6 +23,8 @@ class SentenceTableViewCell: UITableViewCell {
                 let attributedText = NSMutableAttributedString(string: sentence.text)
                 let nsRange = NSMakeRange(range.lowerBound.encodedOffset, range.upperBound.encodedOffset - range.lowerBound.encodedOffset)
                 attributedText.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: self.contentLabel.font.pointSize), range: nsRange)
+                attributedText.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.lightOrange, range: nsRange)
+
                 self.contentLabel.attributedText = attributedText
             }
         }
