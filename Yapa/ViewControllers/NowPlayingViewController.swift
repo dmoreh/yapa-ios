@@ -86,9 +86,11 @@ class NowPlayingViewController: UIViewController {
         guard let audioPlayer = self.audioPlayer else { return }
         if audioPlayer.isPlaying {
             audioPlayer.pause()
+            self.playPauseButton.setImage(UIImage(named: "play"), for: .normal)
             self.timer?.invalidate()
         } else {
             audioPlayer.play()
+            self.playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
             self.timer = Timer.scheduledTimer(timeInterval: 0.3,
                                               target: self,
                                               selector: #selector(updateTime),
