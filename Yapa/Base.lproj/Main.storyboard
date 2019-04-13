@@ -155,11 +155,11 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeTableViewCell" rowHeight="88" id="364-Gj-On9" customClass="EpisodeTableViewCell" customModule="Yapa" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="140" width="320" height="88"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeTableViewCell" rowHeight="86" id="364-Gj-On9" customClass="EpisodeTableViewCell" customModule="Yapa" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="140" width="320" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="364-Gj-On9" id="Lgj-LR-ly5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="85.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiz-qJ-DaY">
@@ -174,10 +174,10 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J71-SL-s7l">
-                                                    <rect key="frame" x="15" y="59" width="290" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J71-SL-s7l">
+                                                    <rect key="frame" x="15" y="56.5" width="290" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -188,7 +188,8 @@
                                                 <constraint firstItem="fiz-qJ-DaY" firstAttribute="leading" secondItem="Lgj-LR-ly5" secondAttribute="leadingMargin" id="Lqd-eD-JBZ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="fiz-qJ-DaY" secondAttribute="trailing" id="W9a-Wg-XdO"/>
                                                 <constraint firstAttribute="trailing" secondItem="J71-SL-s7l" secondAttribute="trailing" constant="15" id="bQX-fj-gwZ"/>
-                                                <constraint firstItem="J71-SL-s7l" firstAttribute="top" secondItem="05i-qM-29r" secondAttribute="bottom" constant="6.5" id="mxX-L3-B05"/>
+                                                <constraint firstItem="J71-SL-s7l" firstAttribute="top" secondItem="05i-qM-29r" secondAttribute="bottom" constant="4" id="mxX-L3-B05"/>
+                                                <constraint firstAttribute="bottom" secondItem="J71-SL-s7l" secondAttribute="bottom" constant="11" id="p7r-VI-XfJ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="05i-qM-29r" secondAttribute="trailing" id="vYX-eV-tgv"/>
                                                 <constraint firstItem="fiz-qJ-DaY" firstAttribute="top" secondItem="Lgj-LR-ly5" secondAttribute="topMargin" id="xKC-DZ-IyU"/>
                                             </constraints>

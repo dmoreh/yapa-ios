@@ -50,10 +50,6 @@ extension PodcastDetailViewController: UITableViewDataSource {
         (cell as? EpisodeTableViewCell)?.episode = self.filteredEpisodes[indexPath.row]
         return cell
     }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 88
-    }
 }
 
 extension PodcastDetailViewController: UITableViewDelegate {
