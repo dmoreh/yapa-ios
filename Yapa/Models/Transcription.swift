@@ -10,7 +10,14 @@ import Foundation
 
 struct Transcription: Codable {
     let id: Int
+    let episodeId: Int
     let sentences: [Sentence]!
+
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case episodeId = "episode_id"
+        case sentences = "sentences"
+    }
 }
 
 struct Sentence: Codable {

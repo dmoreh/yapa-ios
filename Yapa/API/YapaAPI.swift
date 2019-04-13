@@ -46,7 +46,24 @@ struct YapaAPI {
                     print(error)
                 }
         }
+    }
 
+    static func searchEpisode(episodeId: Int, query: String, _ completion: (([SearchResult]) -> Void)?) {
+        Alamofire.request(self.baseURL + "search",
+                          method: .get,
+                          parameters: ["episode_id": episodeId, "query": query],
+                          encoding: URLEncoding.default,
+                          headers: nil)
+            .validate()
+            .responseJSON { response in
+                guard let data = response.data else { return }
+                do {
+                    let searchResponse = try JSONDecoder().decode(SearchResponse.self, from: data)
+                    completion?(searchResponse.results)
+                } catch {
+                    print(error)
+                }
+        }
     }
 }
 
