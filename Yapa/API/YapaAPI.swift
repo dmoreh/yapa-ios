@@ -29,8 +29,41 @@ struct YapaAPI {
                 }
         }
     }
+
+    static func searchPodcast(podcastId: Int, query: String, _ completion: (([SearchResult]) -> Void)?) {
+        Alamofire.request(self.baseURL + "search",
+                          method: .get,
+                          parameters: ["podcast_id": podcastId, "query": query],
+                          encoding: URLEncoding.default,
+                          headers: nil)
+            .validate()
+            .responseJSON { response in
+                guard let data = response.data else { return }
+                do {
+                    let searchResponse = try JSONDecoder().decode(SearchResponse.self, from: data)
+                    completion?(searchResponse.results)
+                } catch {
+                    print(error)
+                }
+        }
+
+    }
 }
 
 struct PodcastResponse: Codable {
     let podcasts: [Podcast]
+}
+
+struct SearchResponse: Codable {
+    let results: [SearchResult]
+}
+
+struct SearchResult: Codable {
+    let episodeId: Int
+    let sentenceIds: [Int]
+
+    enum CodingKeys: String, CodingKey {
+        case episodeId = "episode_id"
+        case sentenceIds = "sentence_ids"
+    }
 }
