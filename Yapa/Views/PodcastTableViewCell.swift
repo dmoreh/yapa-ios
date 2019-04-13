@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class PodcastTableViewCell: UITableViewCell {
     @IBOutlet weak var coverImageView: UIImageView!
@@ -15,15 +16,10 @@ class PodcastTableViewCell: UITableViewCell {
     
     var podcast: Podcast! {
         didSet {
-//            self.coverImageView.image =
+            self.coverImageView.af_setImage(withURL: self.podcast.imageURL)
             self.titleLabel.text = self.podcast.name
             self.subtitleLabel.text = self.podcast.author
         }
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,5 +27,4 @@ class PodcastTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }
