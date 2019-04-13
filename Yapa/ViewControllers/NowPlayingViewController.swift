@@ -22,6 +22,7 @@ class NowPlayingViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var transcriptButton: UIButton!
+    @IBOutlet weak var currentSentenceLabel: UILabel!
 
     var podcast: Podcast!
     var episode: Episode!
@@ -84,6 +85,7 @@ class NowPlayingViewController: UIViewController {
         let progressPercent = audioPlayer.currentTime / audioPlayer.duration
         self.slider.value = Float(progressPercent)
 
+        self.currentSentenceLabel.text = self.currentSentence?.text
         self.delegate?.didChangeCurrentSentence(self.currentSentence)
     }
 
