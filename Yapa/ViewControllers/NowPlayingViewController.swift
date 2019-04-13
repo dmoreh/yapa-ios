@@ -21,6 +21,7 @@ class NowPlayingViewController: UIViewController {
     var podcast: Podcast!
     var episode: Episode!
     var audioPlayer: AVAudioPlayer?
+    var timer: Timer?
 
     static func initFromStoryboard(podcast: Podcast, episode: Episode) -> NowPlayingViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -34,7 +35,12 @@ class NowPlayingViewController: UIViewController {
         super.viewDidLoad()
 
         self.imageView.af_setImage(withURL: self.podcast.imageURL)
-        self.setupAudioPlayer()
+        DispatchQueue.global().async {
+            self.setupAudioPlayer()
+            DispatchQueue.main.async {
+                self.updateTime()
+            }
+        }
     }
 
     private func setupAudioPlayer() {
@@ -49,6 +55,25 @@ class NowPlayingViewController: UIViewController {
         }
     }
 
+    @objc private func updateTime() {
+        guard let audioPlayer = self.audioPlayer else { return }
+
+        self.currentTimeLabel.text = self.formattedString(timeInterval: audioPlayer.currentTime)
+        self.timeRemainingLabel.text = "-" + self.formattedString(timeInterval: audioPlayer.duration - audioPlayer.currentTime)
+    }
+
+    private func formattedString(timeInterval: TimeInterval) -> String {
+        let totalSeconds = Int(timeInterval)
+        let hours = totalSeconds / 60 / 60
+        let minutes = totalSeconds / 60 % 60
+        let seconds = totalSeconds % 60
+
+        if hours == 0 {
+            return String(format:"%02i:%02i", minutes, seconds)
+        }
+        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+    }
+
     @IBAction func sliderValueChanged() {
     }
 
@@ -56,8 +81,14 @@ class NowPlayingViewController: UIViewController {
         guard let audioPlayer = self.audioPlayer else { return }
         if audioPlayer.isPlaying {
             audioPlayer.pause()
+            self.timer?.invalidate()
         } else {
             audioPlayer.play()
+            self.timer = Timer.scheduledTimer(timeInterval: 0.3,
+                                              target: self,
+                                              selector: #selector(updateTime),
+                                              userInfo: nil,
+                                              repeats: true)
         }
     }
 
