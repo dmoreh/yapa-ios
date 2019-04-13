@@ -24,6 +24,20 @@ class NowPlayingViewController: UIViewController {
     var audioPlayer: AVAudioPlayer?
     var timer: Timer?
 
+    var currentSentence: Sentence? {
+        guard let sentences = self.episode.transcription?.sentences,
+            let currentTime = self.audioPlayer?.currentTime
+            else { return nil }
+
+        for sentence in sentences {
+            if sentence.startSeconds <= currentTime && currentTime <= sentence.endSeconds {
+                return sentence
+            }
+        }
+
+        return nil
+    }
+
     static func initFromStoryboard(podcast: Podcast, episode: Episode) -> NowPlayingViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: String(describing: NowPlayingViewController.self)) as! NowPlayingViewController
@@ -100,9 +114,13 @@ class NowPlayingViewController: UIViewController {
     }
 
     @IBAction func backButtonPressed() {
+        guard let currentSentence = self.currentSentence else { return }
+        self.seekToSentence(id: currentSentence.id - 1)
     }
 
     @IBAction func forwardButtonPressed() {
+        guard let currentSentence = self.currentSentence else { return }
+        self.seekToSentence(id: currentSentence.id + 1)
     }
 
     @IBAction func transcriptButtonPressed() {
@@ -114,6 +132,12 @@ class NowPlayingViewController: UIViewController {
     private func seekToSentence(_ sentence: Sentence) {
         self.audioPlayer?.currentTime = sentence.startSeconds
         self.audioPlayer?.play()
+        self.updateTime()
+    }
+
+    private func seekToSentence(id: Int) {
+        guard let sentence = self.episode.transcription?.sentences.first(where: { $0.id == id }) else { return }
+        self.seekToSentence(sentence)
     }
 }
 

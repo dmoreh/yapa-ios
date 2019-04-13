@@ -302,7 +302,6 @@
                                 <state key="normal" image="forward"/>
                                 <connections>
                                     <action selector="forwardButtonPressed" destination="8wm-YN-IR1" eventType="touchUpInside" id="akV-pI-nSM"/>
-                                    <action selector="playPauseButtonPressed" destination="8wm-YN-IR1" eventType="touchUpInside" id="3rs-z8-TD2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2i2-Im-aTQ">
@@ -310,7 +309,6 @@
                                 <state key="normal" image="back"/>
                                 <connections>
                                     <action selector="backButtonPressed" destination="8wm-YN-IR1" eventType="touchUpInside" id="1HR-PG-pqJ"/>
-                                    <action selector="playPauseButtonPressed" destination="8wm-YN-IR1" eventType="touchUpInside" id="Tok-q5-RAb"/>
                                 </connections>
                             </button>
                         </subviews>
