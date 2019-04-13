@@ -60,6 +60,9 @@ class NowPlayingViewController: UIViewController {
 
         self.currentTimeLabel.text = self.formattedString(timeInterval: audioPlayer.currentTime)
         self.timeRemainingLabel.text = "-" + self.formattedString(timeInterval: audioPlayer.duration - audioPlayer.currentTime)
+
+        let progressPercent = audioPlayer.currentTime / audioPlayer.duration
+        self.slider.value = Float(progressPercent)
     }
 
     private func formattedString(timeInterval: TimeInterval) -> String {
